@@ -84,7 +84,7 @@ Esta arquitectura permite el despliegue de un sistema de análisis en tiempo cas
 
 ## Implementación
 
-- [Módulo 1: Generación de datos (EC2 y Kinesis Data Streams)](https://github.com/msosav/st1630-proyecto/tree/main/Modulo-1) - Miguel Sosa Villegas
+- [Módulo 1: Generación de datos (EC2 y Kinesis Data Streams)](https://github.com/msosav/st1630-proyecto/tree/main/M%C3%B3dulo%201) - Miguel Sosa Villegas
 - [Módulo 2: Procesamiento de datos (Lambda y DynamoDB)]() - Santiago Ospina Idrobo
 - [Módulo 3: Almacenamiento histórico (S3 y monitoreo)]() - Yhilmar Andrés Chaverra Castaño
 - [Módulo 4: Análisis y visualización (QuickSight y Kinesis Data Analytics)]() - Diego Alexánder Múnera Tobón
