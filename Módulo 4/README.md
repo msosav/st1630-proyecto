@@ -140,5 +140,6 @@
 ### Dashboard final
 
 <div align="center">
-    <img src="./evidencias/dashboard.png" width="600">
+    <img src="./evidencias/dashboard.png" width="500">
 </div>
+
