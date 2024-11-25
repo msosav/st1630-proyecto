@@ -35,7 +35,7 @@ El proyecto enfrenta desafíos típicos de Big Data, principalmente en la ingest
 
 - Almacenamiento: Los datos se almacenarán en un Data Lake en S3 para datos crudos y en DynamoDB para datos procesados.
 
-- Visualización: La visualización de los datos se realizará mediante el servicio de QuickSight, permitiendo a los usuarios finales acceder a los datos en tiempo casi real.
+- Visualización: La visualización de los datos se realizará mediante el servicio de Grafana, permitiendo a los usuarios finales acceder a los datos en tiempo casi real.
 
 Esta solución aborda el reto de ingestión continua, almacenamiento en un Data Lake y visualización en tiempo casi real, con un enfoque escalable y de bajo costo.
 
@@ -49,11 +49,11 @@ Para la implementación del proyecto se utilizará la metodología CRISP-DM (Cro
 
 - **Preparación de los Datos:** Configuración de Kinesis para capturar datos, enviándolos a S3 y DynamoDB.
 
-- **Modelado:** Diseño de estructuras de almacenamiento en S3 y DynamoDB, optimizando para consultas de tiempo casi real en QuickSight.
+- **Modelado:** Diseño de estructuras de almacenamiento en S3 y DynamoDB, optimizando para consultas de tiempo casi real en Grafana.
 
 - **Evaluación:** Validar que los datos ingresen correctamente a intervalos específicos y que el sistema funcione sin interrupciones, permitiendo un análisis en tiempo casi real.
 
-- **Despliegue:** Configuración de dashboards en QuickSight para visualización de datos, permitiendo a los usuarios finales monitorear el rendimiento de sus activos en tiempo casi real.
+- **Despliegue:** Configuración de dashboards en Grafana para visualización de datos, permitiendo a los usuarios finales monitorear el rendimiento de sus activos en tiempo casi real.
 
 ## Arquitectura de Referencia
 
