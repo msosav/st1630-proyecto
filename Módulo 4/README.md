@@ -9,16 +9,19 @@
    - Ingresar a la consola de AWS y dirigirse al servicio de Amazon Athena.
    - Hacer clic en la opción `Consulte sus datos con Trino SQL` y luego en iniciar el editor de consultas.
    - Escribir la siguiente query en el editor:
+
    
     ```
     CREATE DATABASE stock_analysis;
     ```
+
 
    - Dar clic en `Ejecutar`.
 
 2. **Creación de la tabla externa**
 
    - Eliminar la query anterior y escribir la siguiente query en el editor: 
+
 
     ```
     CREATE EXTERNAL TABLE stock_prices (
@@ -31,7 +34,8 @@
     LOCATION 's3://stock-market-data-msosav/processed/';
     ```
 
-   - Dar click en ejecutar.
+
+   - Dar click en `Ejecutar`.
 
 ## Instalación de Grafana en una máquina EC2
 
@@ -42,6 +46,8 @@
    - Ingresar a la consola de AWS y dirigirse al servicio de Amazon EC2.
    - Hacer clic en el botón `Lanzar instancias`.
    - Parámetros de la instancia:
+
+
     ```
     Nombre: A elección.
     AMI: Ubuntu Server 24.04 LTS.
@@ -55,11 +61,13 @@
         - Abrir los siguientes puertos TCP: 3000, 22, 443, 80.
     ```
 
+
    - Dar clic en el botón `Lanzar instancia`.
 
 2. **Instalar Grafana en la máquina creada**
 
    - Conectarse por SSH a la máquina y ejecutar los siguientes comandos:
+
 
     ```bash
     sudo apt-get update
@@ -72,6 +80,7 @@
     sudo systemctl enable grafana-server
     ```
 
+
 ## Configuración de una fuente de datos en Grafana
 
 ### Pasos a seguir
@@ -79,7 +88,7 @@
 1. **Configurar una nueva conexión**
 
    - Accede a Grafana `http://ip-de-la-instancia:3000`.
-   - Escribe las credenciales por defecto: admin/admin.
+   - Escribe las credenciales por defecto: `admin/admin`.
    - Da clic en `Connections`.
    - Buscar Amazon Athena y dar clic allí.
    - Dar click en `Install plugin` y esperar que instale.
@@ -88,6 +97,8 @@
 
    - Dar click en `Add new data source`.
    - Parámetros de la fuente de datos:
+
+
     ```
     Nombre: A elección
     Authentication Provider: AWS SDK Default
@@ -97,6 +108,8 @@
     Workgroup: primary
     Output Location: s3://stock-market-data-msosav/analysis-results/
     ```
+
+
    No modificar los otros parámetros.
    - Dar click en `Save & test`.
 
@@ -110,6 +123,8 @@
    - Dar clic en `Add visualization`.
    - Seleccionar la fuente de datos recién creada: `grafana-athena-datasource`.
    - Escribir la siguiente query:
+
+
     ```
     SELECT 
         date_trunc('hour', "timestamp") as time,
@@ -128,6 +143,8 @@
     ORDER BY 
         time
     ```
+
+
    - Dar clic en `Run query`.
    - Dar clic en `Add query` copiar y pegar la misma query cambiando la variable symbol por `AAPL`.
    - Dar clic en `Run query`.
@@ -140,6 +157,6 @@
 ### Dashboard final
 
 <div align="center">
-    <img src="./evidencias/dashboard.png" width="500">
+    <img src="./evidencias/dashboard.png" width="800">
 </div>
 
